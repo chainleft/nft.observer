@@ -1,20 +1,35 @@
-Title,Generative?,Generated on chain?,Category,File type,Detail,Date,timestamp
-Etheria,FALSE,FALSE,Game,Game,Metaverse,"October 31, 2015",31.10.2015
-Curio Cards,FALSE,FALSE,Art,Image,Artist collaboration,"May 9, 2017",09.05.2017
-CryptoPunks,TRUE,FALSE,PFP,Image,,"June 23, 2017",23.06.2017
-Mooncats,TRUE,TRUE,Collectible,Image,Blockchain archeology,"August 9, 2017",09.08.2017
-CryptoKitties,TRUE,FALSE,Game,Image,,"November 28, 2017",28.11.2017
-CryptoArte,TRUE,FALSE,Art,Image,,"June 11, 2018",11.06.2018
-Autoglyphs,TRUE,TRUE,Art,Image,Data also stored on chain,"April 26, 2019",26.04.2019
-Avastars Gen 1,TRUE,TRUE,PFP,Image,Data also stored on chain,"February 7, 2020",07.02.2020
-Art Blocks Curated: Ignition,TRUE,TRUE,Art,Interactive,,"January 6, 2021",
-Eulerbeats,TRUE,TRUE,Art,Music,Royalty system,"February 15, 2021",15.02.2021
-Deafbeef,TRUE,TRUE,Art,Music,,"March 26, 2021",26.03.2021
-Bored Ape Yacht Club,TRUE,FALSE,PFP,Image,,"April 30, 2021",30.04.2021
-PixelGlyphs,TRUE,TRUE,PFP,Image,Cellular automaton algorithm,"July 22, 2021",22.07.2021
-thedudes,TRUE,TRUE,PFP,Interactive,,"July 28, 2021",28.07.2021
-Fluf World,TRUE,FALSE,PFP,Video,3d animation,"August 7, 2021",07.08.2021
-Generativemasks,TRUE,TRUE,Art,Image,Dynamic image,"August 16, 2021",16.08.2021
-Audioglyphs,TRUE,TRUE,Art,Music,Infinite music,"August 17, 2021",17.08.2021
-HeavenComputer,TRUE,TRUE,Art,Video,3d animation,"August 18, 2021",18.08.2021
-Art Blocks Factory: ByteBeats,TRUE,TRUE,Art,Music,Infinite music,"April 2, 2021",
+Title,Generative?,Generated on chain?,Category,Type,Subtype,Interactive,Animated,Website,OpenSea link,Original contract address,Detail,Network,Date
+Etheria,,,Collectible,Real estate,,FALSE,FALSE,https://etheria.world/,is not available,https://etherscan.io/address/0xb21f8684f23dbb1008508b4de91a0aaedebdb7e4,metaverse,Ethereum,"November 1, 2015"
+Curio Cards,FALSE,FALSE,Art,Visual,Still image,FALSE,FALSE,https://curio.cards/,https://opensea.io/collection/curiocardswrapper,https://etherscan.io/address/0x6Aa2044C7A0f9e2758EdAE97247B03a0D7e73d6c,artist collaboration,Ethereum,"May 9, 2017"
+CryptoPunks,TRUE,FALSE,PFP,Visual,Still image,FALSE,FALSE,https://www.larvalabs.com/cryptopunks,https://opensea.io/collection/wrapped-cryptopunks,https://etherscan.io/address/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb,pixel,Ethereum,"June 22, 2017"
+Mooncats,TRUE,TRUE,Collectible,Visual,Still image,FALSE,FALSE,https://mooncat.community/,https://opensea.io/collection/acclimatedmooncats,https://etherscan.io/address/0x60cd862c9c687a9de49aecdc3a99b74a4fc54ab6,"blockchain archeology, pixel",Ethereum,"August 9, 2017"
+Thousand Ether Homepage,,,Collectible,Real estate,,FALSE,FALSE,https://thousandetherhomepage.com/,https://opensea.io/collection/thousand-ether-homepage,https://etherscan.io/address/0xb5fe93ccfec708145d6278b0c71ce60aa75ef925,,Ethereum,"August 27, 2017"
+Digital Zones,,FALSE,Art,Visual,Still images,FALSE,FALSE,https://chan.gallery/ikb/,https://opensea.io/collection/ikb-cachet-de-garantie-1,https://etherscan.io/address/0x88ae96845e157558ef59e9ff90e766e22e480390,,Ethereum,"August 29, 2017"
+DADA Creeps & Weirdos,FALSE,FALSE,Art,Visual,Still images,FALSE,FALSE,https://dada.art/home,https://opensea.io/collection/dada-collectible,https://etherscan.io/address/0x068696a3cf3c4676b65f1c9975dd094260109d02,,Ethereum,"October 5, 2017"
+Lunar Token,FALSE,FALSE,Collectible,Real estate,Real estate,FALSE,FALSE,https://lunartoken.co,https://opensea.io/collection/wrapped-lunar,https://etherscan.io/address/0x43fb95c7afa1ac1e721f33c695b2a0a94c7ddab2,,Ethereum,"October 20, 2017"
+CryptoCats,TRUE,TRUE,Collectible,Visual,Still images,FALSE,FALSE,https://cryptocats.thetwentysix.io/,https://opensea.io/assets/wrappedcryptocats,https://etherscan.io/address/0xc4aa7a486c054e6f277712c7d82db1a3a1dbe758,,Ethereum,"November 12, 2017"
+CryptoKitties,TRUE,FALSE,Game,Visual,Still images,FALSE,FALSE,https://www.cryptokitties.co/,https://opensea.io/assets/cryptokitties?collectionSlug=cryptokitties&search[numericTraits][0][name]=generation&search[numericTraits][0][ranges][0][min]=0&search[numericTraits][0][ranges][0][max]=0,https://etherscan.io/address/0x06012c8cf97bead5deae237070f9587f8e7a266d,,Ethereum,"November 23, 2017"
+Mythereum,FALSE,FALSE,Game,Visual,Still images,FALSE,FALSE,https://web.archive.org/web/20180406225648/https://www.mythereum.io/,https://opensea.io/collection/mythereum,https://etherscan.io/address/0xa67aac23549f4c672256b59b43ab0bacfcfcd498,,Ethereum,"February 5, 2018"
+Darkwinds,FALSE,FALSE,Game,Visual,Still images,FALSE,FALSE,https://web.archive.org/web/20180402133356/https://playdarkwinds.com/,,,,Ethereum,"April 30, 2018"
+CryptoStrikers,FALSE,FALSE,Sports,Visual,Still images,FALSE,FALSE,https://www.strikers.auction/,https://opensea.io/collection/wrapped-strikers,https://etherscan.io/address/0xdcaad9fd9a74144d226dbf94ce6162ca9f09ed7e,,Ethereum,"June 9, 2018"
+CryptoArte,TRUE,FALSE,Art,Visual,Still images,FALSE,FALSE,https://www.cryptoarte.io/,https://opensea.io/collection/cryptoarte,https://etherscan.io/address/0xbace7e22f06554339911a03b8e0ae28203da9598,,Ethereum,"July 11, 2018"
+Cryptographics,TRUE,FALSE,Art,Visual,Still images,FALSE,FALSE,https://cryptographics.app/,https://cryptographics.app/gallery,https://etherscan.io/address/0xb80776700778e7415da08ef65fa389f75737fb95,,Ethereum,"October 3, 2018"
+Autoglyphs,TRUE,TRUE,Art,Visual,Still images,FALSE,FALSE,https://www.larvalabs.com/autoglyphs,https://opensea.io/collection/autoglyphs,https://etherscan.io/address/0xd4e4078ca3495de5b1d4db434bebc5a986197782,data also stored on chain,Ethereum,"April 5, 2019"
+KLEEE02,TRUE,FALSE,Art,Visual,Still images,FALSE,FALSE,https://fungle.xyz/kleee02/,https://opensea.io/collection/kleee02,https://etherscan.io/address/0x63658cc84a5b2b969b8df9bea129a1c933e1439f,,Ethereum,"April 10, 2019"
+Chainfaces,TRUE,TRUE,Art,Visual,Still images,FALSE,FALSE,https://www.chainfaces.co/,https://opensea.io/collection/chainfaces,https://etherscan.io/address/0x91047abf3cab8da5a9515c8750ab33b4f1560a7a,,Ethereum,"January 19, 2020"
+Avastars Gen 1,TRUE,TRUE,PFP,Visual,Still images,FALSE,FALSE,https://avastars.io/,https://opensea.io/collection/avastar,https://etherscan.io/address/0xf3e778f839934fc819cfa1040aabacecba01e049,data also stored on chain,Ethereum,"February 7, 2020"
+Art Blocks Curated: Chromie Squiggle,TRUE,TRUE,Art,Visual,Animated visuals,TRUE,TRUE,https://artblocks.io/project/0,https://opensea.io/collection/art-blocks?search[stringTraits][0][name]=Chromie%20Squiggle&search[stringTraits][0][values][0]=All%20Chromie%20Squiggles,https://etherscan.io/address/0x059edd72cd353df5106d2b9cc5ab83a52287ac3a,,Ethereum,"November 27, 2020"
+Art Blocks Curated: Dynamic Slices,TRUE,TRUE,Art,Visual,Animated visuals,TRUE,TRUE,https://artblocks.io/project/4,https://opensea.io/collection/art-blocks?search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=Dynamic%20Slices&search[stringTraits][0][values][0]=All%20Dynamic%20Slices&collectionSlug=art-blocks,https://etherscan.io/address/0x059edd72cd353df5106d2b9cc5ab83a52287ac3a,,Ethereum,"December 12, 2021"
+Art Blocks Curated: Unigrids,TRUE,TRUE,Art,Audiovisual,Audio beats,TRUE,TRUE,https://artblocks.io/project/12,https://opensea.io/collection/art-blocks?search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=Unigrids&search[stringTraits][0][values][0]=All%20Unigrids&collectionSlug=art-blocks,https://etherscan.io/address/0x059edd72cd353df5106d2b9cc5ab83a52287ac3a,infinite music,Ethereum,"January 26, 2021"
+Eulerbeats,TRUE,TRUE,Art,Audiovisual,Songs,FALSE,TRUE,https://eulerbeats.com/genesis,https://opensea.io/collection/eulerbeats,https://etherscan.io/address/0x8754f54074400ce745a7ceddc928fb1b7e985ed6,royalty system,Ethereum,"February 13, 2021"
+Deafbeef,TRUE,TRUE,Art,Audiovisual,Songs,FALSE,TRUE,https://www.deafbeef.com/,https://opensea.io/collection/deafbeef,https://etherscan.io/address/0xd754937672300ae6708a51229112de4017810934,,Ethereum,"March 12, 2021"
+Art Blocks Factory: ByteBeats,TRUE,TRUE,Art,Audiovisual,Audio beats,TRUE,TRUE,https://artblocks.io/project/38,https://opensea.io/collection/art-blocks-factory?search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=%E2%99%AB%20ByteBeats&search[stringTraits][0][values][0]=All%20%E2%99%AB%20ByteBeats,???,infinite music,Ethereum,"April 2, 2021"
+Bored Ape Yacht Club,TRUE,FALSE,PFP,Visual,Still images,FALSE,FALSE,https://boredapeyachtclub.com/,https://opensea.io/collection/boredapeyachtclub,https://etherscan.io/address/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d,,Ethereum,"April 22, 2021"
+FuckYous,TRUE,TRUE,PFP,Visual,Animated visuals,FALSE,TRUE,https://fuckyous.wtf/,https://opensea.io/collection/fuckyous,https://etherscan.io/address/0xcd860df00125f37a588a7b1662c5bf7c29c572b2,,Ethereum,"July 14, 2021"
+PixelGlyphs,TRUE,TRUE,PFP,Visual,Still images,FALSE,FALSE,https://www.pixelglyphs.io/,https://opensea.io/collection/pixelglyphs,https://etherscan.io/address/0xf38d6bf300d52ba7880b43cddb3f94ee3c6c4ea6,cellular automaton algorithm,Ethereum,"July 18, 2021"
+thedudes,TRUE,TRUE,PFP,Visual,Animated visuals,TRUE,TRUE,https://thedudes.art/,https://opensea.io/collection/thedudes,https://etherscan.io/address/0xb0cf7da8dc482997525be8488b9cad4f44315422,,Ethereum,"July 23, 2021"
+Fluf World,TRUE,FALSE,PFP,Audiovisual,Videos with audios,FALSE,TRUE,https://fluf.world/,https://opensea.io/collection/fluf-world,https://etherscan.io/address/0xccc441ac31f02cd96c153db6fd5fe0a2f4e6a68d,3d animation,Ethereum,"August 5, 2021"
+Generativemasks,TRUE,FALSE,Art,Visual,Ever-changing images,FALSE,FALSE,https://generativemasks.on.fleek.co/#/,https://opensea.io/collection/generativemasks,https://etherscan.io/address/0x80416304142fa37929f8a4eee83ee7d2dac12d7c,dynamic image,Ethereum,"August 8, 2021"
+HeavenComputer,TRUE,TRUE,Art,Visual,Silent videos,FALSE,TRUE,https://heaven.computer/,https://opensea.io/collection/heavencomputer,https://etherscan.io/address/0x80adb36595239fe918c7d118c1f81e07d070801a,3d animation,Ethereum,"August 15, 2021"
+Audioglyphs,TRUE,TRUE,Art,Audiovisual,Audio beats,FALSE,TRUE,https://www.audioglyphs.io/,https://opensea.io/collection/audioglyphs,https://etherscan.io/address/0xfb3765e0e7ac73e736566af913fa58c3cfd686b7,infinite music,Ethereum,"August 16, 2021"
+Art Blocks Playground: Beatboxes,TRUE,FALSE,Art,Audiovisual,VR,TRUE,TRUE,https://artblocks.io/project/145,https://opensea.io/collection/art-blocks-playground?search[stringTraits][0][name]=Beatboxes&search[stringTraits][0][values][0]=All%20Beatboxes,???,,Ethereum,"August 26, 2021"
