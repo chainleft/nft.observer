@@ -171,7 +171,11 @@ try:
   st.write('On Ethereum network, the first ', text_onoff_gen, text_interactive, text_type, text_cat, ' NFT collection', text_subtype, 'was:')
   st.subheader(df2['Title'].iloc[0])
   st.text("")
-  st.write(df2['Title'].iloc[0],'was created on',df2['Date'].iloc[0],'. The link to OpenSea:',df2['OpenSea link'].iloc[0])
+  st.write(df2['Title'].iloc[0],'was created on',df2['Date'].iloc[0],'.')
+  st.write("[Website](",df2['Website'].iloc[0],")")
+  st.write("[OpenSea](",df2['OpenSea link'].iloc[0],")")
+
+
   left_column, right_column = st.columns(2)
 
 #  if st.checkbox('Show the full list'):
