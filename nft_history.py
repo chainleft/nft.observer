@@ -9,9 +9,6 @@ import csv
 #from load_css import local_css
 #local_css("style.css")
 
-etherscan_APIkey = 'M6WGR7AGDKQ5KUPRWJF1T9Q13JSCD6DUZ3'
-etherscan_API1 = 'https://api.etherscan.io/api?module=account&action=txlist&address='
-etherscan_API2 = '&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey='
 
 st.title('NFT Collection History')
 
