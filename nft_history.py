@@ -6,7 +6,8 @@ import pandas as pd
 import datetime
 import sys
 import csv
-
+#from load_css import local_css
+#local_css("style.css")
 
 etherscan_APIkey = 'M6WGR7AGDKQ5KUPRWJF1T9Q13JSCD6DUZ3'
 etherscan_API1 = 'https://api.etherscan.io/api?module=account&action=txlist&address='
@@ -33,6 +34,8 @@ type_options.sort()
 subtype_options = list(set(df['Subtype']))
 subtype_options.append('')
 subtype_options.sort()
+
+interact_options = ["","Interactive","Non-interactive"]
 
 #detail_options = list(set(df['Detail']))
 #detail_options.append("")
@@ -130,10 +133,14 @@ try:
     df2 = df2[df2["Subtype"] == subtype]
 
   #Interactive
-  interact = st.sidebar.checkbox("Interactive?", value=False);
+  interact = st.sidebar.selectbox(
+    'Interactive?',
+     interact_options)
   #Filter based on sidebar selection
-  if interact == True:
-    df2 = df2[df2["Interactive"] == interact]
+  if interact == "Interactive":
+    df2 = df2[df2["Interactive"] == True]
+  elif interact == "Non-interactive":
+    df2 = df2[df2["Interactive"] == False]
 
   #Details
   #details = st.sidebar.selectbox(
@@ -149,9 +156,7 @@ try:
   elif gen=="Manual": text_onoff_gen = "manually created"
   else: text_onoff_gen = onoff.lower() + " " + gen.lower()
 
-  if interact==True: text_interactive = "interactive "
-  #elif interact==False: text_interactive = "non-interactive"
-  else: text_interactive = ""
+  text_interactive = interact.lower()
 
   text_cat = cat.lower()
   text_type = filetype.lower()
@@ -167,8 +172,10 @@ try:
   #if interact==True: cat_type = 'interactive ' + cat.lower()
   #elif interact==False: cat_type = 'non-interactive ' cat.lower()
   #else: cat_type = filetype.lower() + " based " + cat.lower()
-
-  st.write('On Ethereum network, the first ', text_onoff_gen, text_interactive, text_type, text_cat, ' NFT collection', text_subtype, 'was:')
+  text_alltypes = text_type + ' ' + text_cat + ' NFT collection ' + text_subtype
+  if text_subtype == "based on meta":
+    text_alltypes = text_type + ' meta NFT collection'
+  st.write('On Ethereum network, the first ', text_onoff_gen, text_interactive, text_alltypes, 'was:')
   st.subheader(df2['Title'].iloc[0])
   st.text("")
   st.write(df2['Title'].iloc[0],'was created on',df2['Date'].iloc[0],'.')
