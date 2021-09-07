@@ -15,7 +15,7 @@ st.title('NFT Collection History')
 df = pd.read_csv('nfts.csv')
 df = df.replace(np.nan, '', regex=True)
 
-df['address'] = df['Original contract address'].str.split("https://etherscan.io/address/").str[1]
+df['address'] = df['Contract'].str.split("https://etherscan.io/address/").str[1]
 
 onoff_options = ["","Off-chain","On-chain"]
 gen_options = ["","Manual","Generative"]
@@ -176,8 +176,27 @@ try:
   st.subheader(df2['Title'].iloc[0])
   st.text("")
   st.write(df2['Title'].iloc[0],'was created on',df2['Date'].iloc[0],'.')
-  st.write("[Website](",df2['Website'].iloc[0],")")
-  st.write("[OpenSea](",df2['OpenSea link'].iloc[0],")")
+  
+  text_web = "[Website]("+df2['Website'].iloc[0]+")"
+  if df2['Website'].iloc[0]=='':
+    text_web = "Website isn't available for this project"
+
+  text_opensea = "[OpenSea]("+df2['OpenSea'].iloc[0]+")"
+  if df2['OpenSea'].iloc[0]=='':
+    text_opensea = "OpenSea link isn't available for this project"
+  
+  text_contract = "[Contract]("+df2['Contract'].iloc[0]+")"
+  if df2['Contract'].iloc[0]=='':
+    text_contract = "Contract link isn't available for this project"
+  
+  text_twitter = "[Twitter]("+df2['Twitter'].iloc[0]+")"
+  if df2['Twitter'].iloc[0]=='':
+    text_twitter = "Twitter link isn't available for this project"
+
+  st.write(text_web)
+  st.write(text_opensea)
+  st.write(text_contract)
+  st.write(text_twitter)
 
 
   left_column, right_column = st.columns(2)
