@@ -24,19 +24,20 @@ cat_options = list(set(df['Category']))
 cat_options.append('')
 cat_options.sort()
 
+format_options = list(set(df['Format']))
+format_options.append('')
+format_options.sort()
+
 type_options = list(set(df['Type']))
 type_options.append('')
 type_options.sort()
-
-subtype_options = list(set(df['Subtype']))
-subtype_options.append('')
-subtype_options.sort()
 
 interact_options = ["","Interactive","Non-interactive"]
 
 #detail_options = list(set(df['Detail']))
 #detail_options.append("")
 #detail_options.sort()
+#https://api.opensea.io/api/v1/collection/curiocardswrapper
 
 df['timestamp'] = pd.to_datetime(df['Date'], format='%B %d, %Y')
 df = df.sort_values(by=['timestamp'])
@@ -57,12 +58,12 @@ try:
     cat_options = list(set(df2['Category']))
     cat_options.append('')
     cat_options.sort()
+    format_options = list(set(df2['Format']))
+    format_options.append('')
+    format_options.sort()
     type_options = list(set(df2['Type']))
     type_options.append('')
     type_options.sort()
-    subtype_options = list(set(df2['Subtype']))
-    subtype_options.append('')
-    subtype_options.sort()
   elif gen == "Generative":
     df2 = df2[df2["Generative?"] == True]
 
@@ -76,24 +77,24 @@ try:
     cat_options = list(set(df2['Category']))
     cat_options.append('')
     cat_options.sort()
+    format_options = list(set(df2['Format']))
+    format_options.append('')
+    format_options.sort()
     type_options = list(set(df2['Type']))
     type_options.append('')
     type_options.sort()
-    subtype_options = list(set(df2['Subtype']))
-    subtype_options.append('')
-    subtype_options.sort()
 
   elif onoff == "Off-chain":
     df2 = df2[df2["Generated on chain?"] == False]
     cat_options = list(set(df2['Category']))
     cat_options.append('')
     cat_options.sort()
+    format_options = list(set(df2['Format']))
+    format_options.append('')
+    format_options.sort()
     type_options = list(set(df2['Type']))
     type_options.append('')
     type_options.sort()
-    subtype_options = list(set(df2['Subtype']))
-    subtype_options.append('')
-    subtype_options.sort()
 
   #Category
   cat = st.sidebar.selectbox(
@@ -102,32 +103,31 @@ try:
   #Filter based on sidebar selection
   if cat != "":
     df2 = df2[df2["Category"] == cat]
+    format_options = list(set(df2['Format']))
+    format_options.append('')
+    format_options.sort()
     type_options = list(set(df2['Type']))
     type_options.append('')
     type_options.sort()
-    subtype_options = list(set(df2['Subtype']))
-    subtype_options.append('')
-    subtype_options.sort()
 
+  #Format
+  fileformat = st.sidebar.selectbox(
+      'Format',
+       format_options)
+  #Filter based on sidebar selection
+  if fileformat != "":
+    df2 = df2[df2["Format"] == fileformat]
+    type_options = list(set(df2['Type']))
+    type_options.append('')
+    type_options.sort()
 
-  #Type
-  filetype = st.sidebar.selectbox(
+  #Subtype
+  type_selected = st.sidebar.selectbox(
       'Type',
        type_options)
   #Filter based on sidebar selection
-  if filetype != "":
-    df2 = df2[df2["Type"] == filetype]
-    subtype_options = list(set(df2['Subtype']))
-    subtype_options.append('')
-    subtype_options.sort()
-
-  #Subtype
-  subtype = st.sidebar.selectbox(
-      'Sub-type',
-       subtype_options)
-  #Filter based on sidebar selection
-  if subtype != "":
-    df2 = df2[df2["Subtype"] == subtype]
+  if type_selected != "":
+    df2 = df2[df2["Type"] == type_selected]
 
   #Interactive
   interact = st.sidebar.selectbox(
@@ -156,10 +156,10 @@ try:
   text_interactive = interact.lower()
 
   text_cat = cat.lower()
-  text_type = filetype.lower()
+  text_format = fileformat.lower()
 
-  if subtype!="": text_subtype = "based on " + subtype.lower()
-  else: text_subtype = ""
+  if type_selected!="": text_type = "based on " + type_selected.lower()
+  else: text_type = ""
 
 
   #if ==True: cat_type = 'interactive ' + cat.lower()
@@ -169,9 +169,9 @@ try:
   #if interact==True: cat_type = 'interactive ' + cat.lower()
   #elif interact==False: cat_type = 'non-interactive ' cat.lower()
   #else: cat_type = filetype.lower() + " based " + cat.lower()
-  text_alltypes = text_type + ' ' + text_cat + ' NFT collection ' + text_subtype
-  if text_subtype == "based on meta":
-    text_alltypes = text_type + ' meta NFT collection'
+  text_alltypes = text_format + ' ' + text_cat + ' NFT collection ' + text_type
+  if text_type == "based on meta":
+    text_alltypes = text_format + ' meta NFT collection'
   st.write('On Ethereum network, the first ', text_onoff_gen, text_interactive, text_alltypes, 'was:')
   st.subheader(df2['Title'].iloc[0])
   st.text("")
@@ -197,7 +197,7 @@ try:
   st.write(text_opensea)
   st.write(text_contract)
   st.write(text_twitter)
-
+  #st.image("https://ipfs.io/ipfs/QmZH7MZK6XGELZNhHre2LJiBcXFpsi1wzhmx1MGcApahnD",width=400, # Manually Adjust the width of the image as per requirement)
 
   left_column, right_column = st.columns(2)
 
@@ -216,8 +216,6 @@ expander = st.expander("Notes")
 
 expander.write("- Interactive means the viewer can change the way the NFT output looks")
 expander.write("- For more explanations for each category, see the Types of NFTs page")
-#expander.write("- Dynamic image means the viewer sees a different image every time they refresh the image")
-#expander.write("- Unigrids or Audioglphys are categorized under 'audio beats'. Audio beats are when there's a single beat or melody that lasts in an infinite loop. Songs are differentiated as being a limited music piece where there are multiple beats/melodies")
 expander.write("- Categorization was the hardest part of this project. If you have any feedback, we are open")
 expander.write("- In fact, we are open to any feedback!")
 
