@@ -181,9 +181,9 @@ try:
   if df2['Website'].iloc[0]=='':
     text_web = "Website isn't available for this project"
 
-  text_opensea = "[OpenSea]("+df2['OpenSea'].iloc[0]+")"
+  text_opensea = "[Marketplace]("+df2['OpenSea'].iloc[0]+")"
   if df2['OpenSea'].iloc[0]=='':
-    text_opensea = "OpenSea link isn't available for this project"
+    text_opensea = "Marketplace link isn't available for this project"
   
   text_contract = "[Contract]("+df2['Contract'].iloc[0]+")"
   if df2['Contract'].iloc[0]=='':
@@ -218,7 +218,7 @@ expander = st.expander("Notes")
 
 expander.write("- Interactive means the viewer can change the way the NFT output looks")
 expander.write("- For more explanations for each category, see the Types of NFTs page")
-expander.write("- Categorization was the hardest part of this project. If you have any feedback, we are open")
+expander.write("- Categorization is determined almost arbitrarily. If you have any feedback, we are open")
 expander.write("- In fact, we are open to any feedback!")
 
 #expander = st.expander("Roadmap for NFT Archive")
