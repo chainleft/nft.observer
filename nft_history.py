@@ -26,9 +26,10 @@ def build_choices(df,column):
 
 
 hide_streamlit_style = """
-<style>
+<style
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
+.css-hi6a2p {padding-top: 0rem;}
 </style>
 
 """
@@ -228,7 +229,8 @@ st.text("")
 
 expander = st.expander("Notes")
 
-expander.write("- Interactive means the viewer can change the way the NFT output looks")
+expander.write("- Early NFTs are experimental and NFT archeologists may discover new early NFTs that is not in our database. For any missing pieces, please contact NFT Archive on Twitter")
+expander.write("- For now, we're only focusing on 'collections' but we plan to add single NFT assets soon too")
 expander.write("- For more explanations for each category, see the Types of NFTs page")
 expander.write("- Categorization is determined almost arbitrarily. If you have any feedback, we are open")
 expander.write("- In fact, we are open to any feedback!")
