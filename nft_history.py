@@ -13,7 +13,6 @@ import csv
 def pull_organize():
   df = pd.read_csv('nfts_edit.csv')
   df = df.replace(np.nan, '', regex=True)
-  df = df[df["Network"] == "Ethereum"]
   df['address'] = df['Contract'].str.split("https://etherscan.io/address/").str[1]
   df['opensea_coll_slug'] = df['OpenSea'].str.split("https://opensea.io/collection/").str[1]
   return df
@@ -26,20 +25,22 @@ def build_choices(df,column):
 
 
 hide_streamlit_style = """
-<style
+<style>
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
-.css-hi6a2p {padding-top: 0rem;}
+.sidebar-text {
+    font-size:4px;
+}
 </style>
 
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
-
 st.title('NFT Collection History')
 
 df = pull_organize()
 
+networks = ["","Ethereum","Counterparty","Namecoin"]
 onoff_options = ["","Off-chain","On-chain"]
 gen_options = ["","Curated","Generative"]
 sft_options = ["Included","Excluded"]
@@ -49,6 +50,7 @@ cat_options = build_choices(df,'Category')
 format_options = build_choices(df,'Format')
 type_options = build_choices(df,'Type')
 
+#df = df[df["Network"] == "Ethereum"]
 
 #detail_options = list(set(df['Detail']))
 #detail_options.append("")
@@ -63,8 +65,19 @@ class ParameterError(Exception):
     pass
 
 try:
+  #Networks
+  network = st.sidebar.selectbox(
+      'Networks', networks)
+  #Filter based on sidebar selection
+  if network != '':
+    df2 = df2[df2['Network'] == network]
+    cat_options = build_choices(df2,'Category')
+    format_options = build_choices(df2,'Format')
+    type_options = build_choices(df2,'Type')
+
+  checkbox_msg = 'Include SFTs (editions)?'
   #Non-fungible or semi-fungible
-  sft = st.sidebar.checkbox('Include SFTs (editions)?', value=True)
+  sft = st.sidebar.checkbox(checkbox_msg, value=True)
   #Filter based on sidebar selection
   if sft == False:
     df2 = df2[df2["nonfungibleness"] == "Fully nonfungible"]
@@ -73,7 +86,7 @@ try:
     type_options = build_choices(df2,'Type')
 
   #Tokenness
-  nontokens = st.sidebar.checkbox('Include non-tokens?', value=False)
+  nontokens = st.sidebar.checkbox('Include non-transferrables?', value=False)
   #Filter based on sidebar selection
   if nontokens == False:
     df2 = df2[df2["transferrable"] == True]
@@ -182,10 +195,14 @@ try:
   #if interact==True: cat_type = 'interactive ' + cat.lower()
   #elif interact==False: cat_type = 'non-interactive ' cat.lower()
   #else: cat_type = filetype.lower() + " based " + cat.lower()
+  if network!='':
+    text_network = 'On '+network+' network, the first '
+  else: text_network = 'The first '
+
   text_alltypes = text_format + ' ' + text_cat + ' NFT collection ' + text_type
   if text_type == "based on meta":
     text_alltypes = text_format + ' meta NFT collection'
-  st.write('On Ethereum network, the first ', text_onoff_gen, text_interactive, text_alltypes, text_sft, text_nontokens, 'was:')
+  st.write(text_network, text_onoff_gen, text_interactive, text_alltypes, text_sft, text_nontokens, 'was:')
   st.subheader(df2['Title'].iloc[0])
   st.text("")
   st.write(df2['Title'].iloc[0],'was created on',df2['Date'].iloc[0],'.')
@@ -219,7 +236,7 @@ try:
 #  if st.checkbox('Show the full list'):
 #      df
 except:
-  raise ParameterError("There are no NFTs matching all of these parameters")
+  raise ParameterError("We haven't updated our database with NFTs matching these criteria")
 sys.tracebacklimit = 0
 
 st.text("")
