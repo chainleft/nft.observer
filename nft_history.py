@@ -124,7 +124,7 @@ try:
 
   #Category
   cat = st.sidebar.selectbox(
-      'Category',
+      'Primary category',
        cat_options)
   #Filter based on sidebar selection
   if cat != "":
