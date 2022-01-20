@@ -85,6 +85,16 @@ try:
     format_options = build_choices(df2,'Format')
     type_options = build_choices(df2,'Type')
 
+  expirableness = 'Include expirables?'
+  #Expirable or forever ownership
+  expr = st.sidebar.checkbox(expirableness, value=True)
+  #Filter based on sidebar selection
+  if expr == False:
+    df2 = df2[df2["ownership_period"] == "Forever"]
+    cat_options = build_choices(df2,'Category')
+    format_options = build_choices(df2,'Format')
+    type_options = build_choices(df2,'Type')
+
   #Tokenness
   nontokens = st.sidebar.checkbox('Include non-transferrables?', value=False)
   #Filter based on sidebar selection
@@ -171,6 +181,9 @@ try:
   text_sft = ""
   if sft == False: text_sft = " (excluding editioned SFTs)"
 
+  text_expr = ""
+  if expr == False: text_expr = " (excluding expirable tokens)"
+
   text_nontokens = ""
   if nontokens == True: text_nontokens = " (including non-transferrable entities)"
 
@@ -202,10 +215,10 @@ try:
   text_alltypes = text_format + ' ' + text_cat + ' NFT collection ' + text_type
   if text_type == "based on meta":
     text_alltypes = text_format + ' meta NFT collection'
-  st.write(text_network, text_onoff_gen, text_interactive, text_alltypes, text_sft, text_nontokens, 'was:')
+  st.write(text_network, text_onoff_gen, text_interactive, text_alltypes, text_sft, text_expr, text_nontokens, 'was:')
   st.subheader(df2['Title'].iloc[0])
   st.text("")
-  st.write(df2['Title'].iloc[0],'was created on',df2['Date'].iloc[0],'.')
+  st.write(df2['Title'].iloc[0],'was/were created on',df2['Date'].iloc[0],'.')
   
   text_web = "[Website]("+df2['Website'].iloc[0]+")"
   if df2['Website'].iloc[0]=='':
